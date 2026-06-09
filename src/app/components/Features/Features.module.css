@@ -1,0 +1,111 @@
+.section {
+  padding: 100px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #a855f7;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.sub {
+  color: rgba(255,255,255,0.6);
+  max-width: 500px;
+  margin: 0 auto 56px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.grid.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(168,85,247,0.15);
+  border-color: rgba(168,85,247,0.3);
+}
+
+.iconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.iconEmoji {
+  font-size: 1.4rem;
+}
+
+.cardTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cardDesc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.badges {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.badge {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.06);
+  border-radius: 6px;
+  padding: 4px 10px;
+  display: inline-block;
+  width: fit-content;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+  .section { padding: 60px 20px; }
+}

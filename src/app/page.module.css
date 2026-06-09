@@ -1,0 +1,7 @@
+.page {
+  background: radial-gradient(circle at top, #0b0b1a, #000);
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}

@@ -1,0 +1,114 @@
+.section {
+  padding: 100px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #a855f7;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.heading {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 56px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.grid.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(168,85,247,0.25);
+  border-radius: 18px;
+  padding: 32px;
+  text-align: left;
+  transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 0 30px rgba(168,85,247,0.18);
+  border-color: rgba(168,85,247,0.5);
+  transform: translateY(-4px);
+}
+
+.cardLabel {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: #a855f7;
+  margin-bottom: 14px;
+}
+
+.cardHeading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.cardDesc {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 20px;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.featureList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.check {
+  color: #a855f7;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+}
+@media (max-width: 560px) {
+  .section { padding: 60px 20px; }
+}

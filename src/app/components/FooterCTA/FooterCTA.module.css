@@ -1,0 +1,88 @@
+.section {
+  position: relative;
+  text-align: center;
+  padding: 120px 40px;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(168,85,247,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #a855f7;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.grad {
+  background: linear-gradient(90deg, #a855f7, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sub {
+  color: rgba(255,255,255,0.55);
+  max-width: 520px;
+  margin: 0 auto 40px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.btnPrimary {
+  background: linear-gradient(90deg, #a855f7, #3b82f6);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(168,85,247,0.4);
+}
+
+.btnSecondary {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.85);
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.btnSecondary:hover {
+  border-color: rgba(168,85,247,0.5);
+}
+
+.note {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.3);
+}
