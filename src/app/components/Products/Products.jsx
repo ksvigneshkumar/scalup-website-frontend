@@ -3,16 +3,13 @@ import { useState } from "react";
 import useReveal from "../../hooks/useReveal";
 import { products } from "../../data/siteData";
 import styles from "./Products.module.css";
-
 export default function Products() {
   const [tab, setTab] = useState("marketing");
   const { ref, visible } = useReveal();
-
   return (
-    <section className={styles.section} id="products">
+    <section className={styles.section}>
       <p className={styles.eyebrow}>OUR PRODUCTS</p>
       <h2 className={styles.sectionTitle}>10 tools. One suite.</h2>
-
       <div className={styles.tabRow}>
         {["marketing", "sales", "support"].map((t) => (
           <button
@@ -24,7 +21,6 @@ export default function Products() {
           </button>
         ))}
       </div>
-
       <div ref={ref} className={`${styles.grid3} ${visible ? styles.visible : ""}`}>
         {products[tab].map((p, i) => (
           <div

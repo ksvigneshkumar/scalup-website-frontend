@@ -2,15 +2,12 @@
 import useReveal from "../../hooks/useReveal";
 import { companyCards } from "../../data/siteData";
 import styles from "./Company.module.css";
-
 export default function Company() {
   const { ref, visible } = useReveal();
-
   return (
     <section className={styles.section}>
       <p className={styles.eyebrow}>COMPANY</p>
       <h2 className={styles.sectionTitle}>The Complete AI Growth Suite for Every Company</h2>
-
       <div ref={ref} className={`${styles.grid3} ${visible ? styles.visible : ""}`}>
         {companyCards.map((c, i) => (
           <div

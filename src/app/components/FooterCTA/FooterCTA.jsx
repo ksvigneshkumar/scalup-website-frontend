@@ -1,5 +1,4 @@
 import styles from "./FooterCTA.module.css";
-
 export default function FooterCTA() {
   return (
     <section className={styles.section}>

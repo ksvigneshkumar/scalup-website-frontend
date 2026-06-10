@@ -2,15 +2,12 @@
 import useReveal from "../../hooks/useReveal";
 import { pricingPlans } from "../../data/siteData";
 import styles from "./Pricing.module.css";
-
 export default function Pricing() {
   const { ref, visible } = useReveal();
-
   return (
     <section className={styles.section} id="pricing">
       <p className={styles.eyebrow}>Pricing</p>
       <h2 className={styles.sectionTitle}>Simple Pricing For Everyone</h2>
-
       <div ref={ref} className={`${styles.priceGrid} ${visible ? styles.visible : ""}`}>
         {pricingPlans.map((p, i) => (
           <div

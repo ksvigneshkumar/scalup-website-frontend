@@ -1,8 +1,3 @@
-// ═══════════════════════════════════
-//  siteData.js — எல்லா content data
-//  ஒரே file-ல. மாத்தணும்னா இங்க மட்டும் மாத்தினா போதும்
-// ═══════════════════════════════════
-
 export const features = [
   {
     icon: "⚡", iconBg: "#1a1040", iconColor: "#f59e0b",
@@ -41,7 +36,6 @@ export const features = [
     badges: ["60+ integrations", "Native webhooks", "Zapier-free"],
   },
 ];
-
 export const products = {
   marketing: [
     ["🎪", "Optinly", "Engage your audience with strategic popups personalized for your use case that capture leads 10X faster."],
@@ -62,7 +56,6 @@ export const products = {
     ["🛍️", "eCommerce Bot", "AI shopping assistant that handles pre and post-purchase support end to end."],
   ],
 };
-
 export const integrations = [
   ["⚡","Zapier"],["🔶","HubSpot"],["📊","Google Sheets"],["🛍️","WooCommerce"],
   ["💳","Stripe"],["📦","Shopify"],["📧","Gmail"],["📅","Google Calendar"],
@@ -70,7 +63,6 @@ export const integrations = [
   ["📌","Trello"],["🔗","Webflow"],["🟡","Pipedrive"],["📱","WhatsApp"],
   ["🔴","Mailchimp"],["🟣","ActiveCampaign"],["📊","Airtable"],["➕","+40 more..."],
 ];
-
 export const faqs = [
   ["Can I use full products instead of the bundle",
    "Yes! You can subscribe to individual products. Each is available standalone, but the bundle gives best value with all tools under one roof."],
@@ -85,7 +77,6 @@ export const faqs = [
   ["Is there an affiliate or partnership program",
    "Yes! We have both an affiliate program and a partner program. Visit our Partner Program page to learn more."],
 ];
-
 export const companyCards = [
   {
     title: "STARTUPS",
@@ -103,7 +94,6 @@ export const companyCards = [
     features: ["Advanced automation & AI-driven workflows","Large-scale customer engagement","Deep integrations with enterprise systems","Centralized operations management","Analytics for data-driven decision making","Personalized customer experiences at scale"],
   },
 ];
-
 export const pricingPlans = [
   {
     name: "Starter", price: "0", period: "/month forever",
@@ -147,9 +137,6 @@ export const pricingPlans = [
     cta: "Talk to Expert", highlight: false,
   },
 ];
-
-// val format: [feature, scalup, hubspot, mailchimp, instantly]
-// "y"=green ✓  "n"=red ✗  "p"=yellow Partial  "$xx"=price text
 export const comparisonFeatures = [
   ["AI-powered marketing automation", "y","p","y","n"],
   ["Cold outreach + lead database",   "y","n","n","y"],
@@ -158,9 +145,8 @@ export const comparisonFeatures = [
   ["Push notifications",              "y","n","n","n"],
   ["Native eCommerce support",        "y","p","p","n"],
   ["Review / testimonial management", "y","n","n","n"],
-  ["Starting price / month",          "$29","$20","$13","$37"],
+  ["Starting price / month",          "$29","$800","$13","$37"],
 ];
-
 export const footerLinks = {
   products: ["deepagent","growth","HyperReach AI","Forms","Engage","Content AI","Notify","Testimonials","Inbound 360"],
   company:  ["About Us","Blog","Free Ebooks","Partner Program","Referral Program","Careers"],

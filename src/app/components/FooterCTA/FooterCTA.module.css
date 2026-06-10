@@ -33,7 +33,6 @@
 }
 .ghostBtn:hover { background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.3); transform:translateY(-2px); }
 .ctaFine { color:#555; font-size:14px; }
-
 @media (max-width:768px) {
   .section { padding:80px 20px; }
   .ctaTitle { font-size:30px; }

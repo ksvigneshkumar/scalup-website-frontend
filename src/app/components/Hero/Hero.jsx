@@ -28,7 +28,7 @@ export default function Hero() {
         <button className={styles.ghostBtn}>▶ Watch 2-min Demo</button>
       </div>
 
-      <div className={styles.statStrip}>
+      {/* <div className={styles.statStrip}>
         <div className={styles.stat}>
           <strong><Counter target={50000} suffix="+" /></strong>
           <span>Businesses</span>
@@ -48,7 +48,7 @@ export default function Hero() {
           <strong><Counter target={60} suffix="+" /></strong>
           <span>Integrations</span>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

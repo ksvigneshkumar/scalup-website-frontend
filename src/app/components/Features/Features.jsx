@@ -2,16 +2,13 @@
 import useReveal from "../../hooks/useReveal";
 import { features } from "../../data/siteData";
 import styles from "./Features.module.css";
-
 export default function Features() {
   const { ref, visible } = useReveal();
-
   return (
-    <section className={styles.section} >
+    <section className={styles.section} id="products">
       <p className={styles.eyebrow}>WHAT SCALUP DOES</p>
       <h2 className={styles.sectionTitle}>Your growth stack, unified</h2>
       <p className={styles.sectionSub}>A flexible sales and marketing suite that helps you go from lead to revenue.</p>
-
       <div ref={ref} className={`${styles.grid3} ${visible ? styles.visible : ""}`}>
         {features.map((f, i) => (
           <div
