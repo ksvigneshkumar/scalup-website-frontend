@@ -4,35 +4,37 @@ import useReveal from "../../hooks/useReveal";
 import { products } from "../../data/siteData";
 import styles from "./Products.module.css";
 
-const TABS = ["marketing", "sales", "support"];
-
 export default function Products() {
   const [tab, setTab] = useState("marketing");
   const { ref, visible } = useReveal();
 
   return (
     <section className={styles.section} id="products">
-      <p className={styles.label}>OUR PRODUCTS</p>
-      <h2 className={styles.heading}>10 tools. One suite.</h2>
+      <p className={styles.eyebrow}>OUR PRODUCTS</p>
+      <h2 className={styles.sectionTitle}>10 tools. One suite.</h2>
 
-      <div className={styles.tabs}>
-        {TABS.map((t) => (
+      <div className={styles.tabRow}>
+        {["marketing", "sales", "support"].map((t) => (
           <button
             key={t}
-            className={`${styles.tab} ${tab === t ? styles.active : ""}`}
             onClick={() => setTab(t)}
+            className={`${styles.tabBtn} ${tab === t ? styles.tabActive : ""}`}
           >
             {t}
           </button>
         ))}
       </div>
 
-      <div ref={ref} className={`${styles.grid} ${visible ? styles.visible : ""}`}>
+      <div ref={ref} className={`${styles.grid3} ${visible ? styles.visible : ""}`}>
         {products[tab].map((p, i) => (
-          <div key={i} className={styles.card} style={{ animationDelay: `${i * 60}ms` }}>
-            <span className={styles.icon}>{p.icon}</span>
-            <h3 className={styles.name}>{p.name}</h3>
-            <p className={styles.desc}>{p.desc}</p>
+          <div
+            key={`${tab}-${i}`}
+            className={`${styles.productCard} ${styles.fadeIn}`}
+            style={{ animationDelay: `${i * 70}ms` }}
+          >
+            <div className={styles.productEmoji}>{p[0]}</div>
+            <h3>{p[1]}</h3>
+            <p>{p[2]}</p>
           </div>
         ))}
       </div>

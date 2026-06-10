@@ -1,7 +1,12 @@
 .page {
-  background: radial-gradient(circle at top, #0b0b1a, #000);
-  color: white;
-  font-family: Arial, sans-serif;
+  background: radial-gradient(ellipse at top, #0d0520 0%, #000008 60%);
+  color: #fff;
+  font-family: sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
+}
+
+/* smooth scroll for all anchor links */
+html {
+  scroll-behavior:smooth;
 }

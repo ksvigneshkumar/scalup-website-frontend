@@ -8,37 +8,34 @@ export default function Pricing() {
 
   return (
     <section className={styles.section} id="pricing">
-      <p className={styles.label}>Pricing</p>
-      <h2 className={styles.heading}>Simple Pricing For Everyone</h2>
+      <p className={styles.eyebrow}>Pricing</p>
+      <h2 className={styles.sectionTitle}>Simple Pricing For Everyone</h2>
 
-      <div ref={ref} className={`${styles.grid} ${visible ? styles.visible : ""}`}>
-        {pricingPlans.map((plan, i) => (
+      <div ref={ref} className={`${styles.priceGrid} ${visible ? styles.visible : ""}`}>
+        {pricingPlans.map((p, i) => (
           <div
             key={i}
-            className={`${styles.card} ${plan.highlight ? styles.highlight : ""}`}
+            className={`${styles.priceCard} ${p.highlight ? styles.priceHighlight : ""}`}
             style={{ transitionDelay: `${i * 100}ms` }}
           >
-            {plan.highlight && <span className={styles.badge}>Most Popular</span>}
-            <p className={styles.planName}>{plan.name}</p>
-            <div className={styles.price}>
-              <span className={styles.dollar}>$</span>
-              <span className={styles.amount}>{plan.price}</span>
-              <span className={styles.period}>/{plan.period}</span>
+            {p.highlight && <div className={styles.popularBadge}>Most Popular</div>}
+            <h3 className={styles.planName}>{p.name}</h3>
+            <div className={styles.planPrice}>
+              <span className={styles.planDollar}>$</span>
+              <span className={styles.planNum}>{p.price}</span>
             </div>
-            <p className={styles.desc}>{plan.desc}</p>
-
-            <ul className={styles.features}>
-              {plan.features.map((f, j) => (
-                <li key={j} className={f.included ? styles.included : styles.excluded}>
-                  <span>{f.included ? "✓" : "-"}</span>
-                  {f.text}
+            <p className={styles.planPeriod}>{p.period}</p>
+            <p className={styles.planSub}>{p.sub}</p>
+            <ul className={styles.planFeatures}>
+              {p.features.map((f, j) => (
+                <li key={j} className={f.y ? styles.planIncluded : styles.planExcluded}>
+                  <span>{f.y ? "✓" : "–"}</span> {f.t}
                 </li>
               ))}
             </ul>
-
-            <a href="#" className={`${styles.cta} ${plan.highlight ? styles.ctaHighlight : ""}`}>
-              {plan.cta}
-            </a>
+            <button className={p.highlight ? styles.primaryBtn : styles.outlineBtn}>
+              {p.cta}
+            </button>
           </div>
         ))}
       </div>

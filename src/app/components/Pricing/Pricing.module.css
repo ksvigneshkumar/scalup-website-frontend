@@ -1,176 +1,71 @@
-.section {
-  padding: 100px 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-}
+.section { padding: 100px 48px; background: rgba(8,8,22,0.7); backdrop-filter: blur(12px); }
+.eyebrow { text-align:center; font-size:13px; letter-spacing:2.5px; color:#a855f7; margin-bottom:12px; font-weight:600; }
+.sectionTitle { text-align:center; font-size:42px; font-weight:800; margin:0 0 14px; }
 
-.label {
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  color: #a855f7;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.heading {
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  font-weight: 800;
-  margin-bottom: 56px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  align-items: start;
-}
-
-.grid > * {
+.priceGrid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:52px; align-items:start; }
+.priceGrid > * {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(48px);
+  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1),
+              transform 0.7s cubic-bezier(0.16,1,0.3,1);
 }
+.priceGrid.visible > * { opacity:1; transform:translateY(0); }
 
-.grid.visible > * {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card {
-  background: rgba(255,255,255,0.04);
+.priceCard {
+  background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 18px;
+  border-radius: 20px;
   padding: 32px;
-  text-align: left;
   position: relative;
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1),
+              border-color 0.3s ease,
+              box-shadow 0.4s ease;
 }
-
-.card:hover {
-  transform: translateY(-4px);
+.priceCard:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(168,85,247,0.45);
+  box-shadow: 0 16px 48px rgba(168,85,247,0.15);
 }
-
-.highlight {
-  background: rgba(168,85,247,0.1);
-  border-color: rgba(168,85,247,0.5);
-  box-shadow: 0 0 40px rgba(168,85,247,0.15);
+.priceHighlight {
+  border-color: rgba(168,85,247,0.55) !important;
+  background: rgba(168,85,247,0.07) !important;
 }
-
-.badge {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, #a855f7, #3b82f6);
-  color: white;
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 4px 14px;
-  border-radius: 50px;
-  white-space: nowrap;
+.popularBadge {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(90deg,#a855f7,#3b82f6);
+  padding: 4px 18px; border-radius: 999px;
+  font-size: 12px; font-weight: 700; white-space: nowrap;
 }
+.planName   { font-size:16px; color:#aaa; font-weight:500; margin:0 0 14px; }
+.planPrice  { display:flex; align-items:flex-start; gap:2px; }
+.planDollar { font-size:22px; color:#aaa; margin-top:10px; }
+.planNum    { font-size:60px; font-weight:800; line-height:1; }
+.planPeriod { color:#666; font-size:14px; margin:8px 0 16px; }
+.planSub    { color:#888; font-size:14px; line-height:1.65; margin:0 0 20px; }
+.planFeatures { list-style:none; padding:0; margin:0 0 26px; display:flex; flex-direction:column; gap:10px; }
+.planIncluded { font-size:14px; color:#bbb; display:flex; align-items:center; gap:8px; }
+.planIncluded span { color:#a855f7; font-weight:700; }
+.planExcluded { font-size:14px; color:#444; display:flex; align-items:center; gap:8px; }
 
-.planName {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.6);
-  margin-bottom: 12px;
+.primaryBtn {
+  display:block; width:100%; padding:13px 20px;
+  background: linear-gradient(90deg,#a855f7,#3b82f6);
+  border:none; color:#fff; font-size:15px; font-weight:600;
+  border-radius:10px; cursor:pointer; transition:all 0.25s; text-align:center;
 }
-
-.price {
-  display: flex;
-  align-items: flex-end;
-  gap: 2px;
-  margin-bottom: 8px;
+.primaryBtn:hover { opacity:0.88; transform:translateY(-2px); box-shadow:0 8px 24px rgba(168,85,247,0.4); }
+.outlineBtn {
+  display:block; width:100%; padding:13px 20px;
+  border:1px solid rgba(255,255,255,0.15); background:transparent;
+  color:#fff; font-size:15px; border-radius:10px;
+  cursor:pointer; transition:all 0.25s; text-align:center;
 }
+.outlineBtn:hover { border-color:#a855f7; background:rgba(168,85,247,0.08); }
 
-.dollar {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: rgba(255,255,255,0.7);
-  margin-bottom: 6px;
-}
-
-.amount {
-  font-size: 3.2rem;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.period {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 8px;
-  margin-left: 4px;
-}
-
-.desc {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.55;
-  margin-bottom: 24px;
-}
-
-.features {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.features li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.83rem;
-}
-
-.included {
-  color: rgba(255,255,255,0.8);
-}
-
-.included span {
-  color: #a855f7;
-  font-weight: 700;
-}
-
-.excluded {
-  color: rgba(255,255,255,0.3);
-}
-
-.cta {
-  display: block;
-  text-align: center;
-  padding: 12px;
-  border-radius: 10px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.8);
-  transition: all 0.2s;
-}
-
-.cta:hover {
-  border-color: rgba(168,85,247,0.5);
-  color: white;
-}
-
-.ctaHighlight {
-  background: linear-gradient(90deg, #a855f7, #3b82f6);
-  border: none;
-  color: white;
-}
-
-.ctaHighlight:hover {
-  opacity: 0.9;
-  box-shadow: 0 6px 20px rgba(168,85,247,0.4);
-}
-
-@media (max-width: 768px) {
-  .grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-  .section { padding: 60px 20px; }
+@media (max-width:1024px) { .priceGrid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:768px) {
+  .section { padding:70px 20px; }
+  .sectionTitle { font-size:28px; }
+  .priceGrid { grid-template-columns:1fr; max-width:400px; margin-left:auto; margin-right:auto; }
+  .planNum { font-size:52px; }
 }
