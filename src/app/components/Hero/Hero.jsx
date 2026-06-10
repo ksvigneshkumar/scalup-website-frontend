@@ -14,11 +14,8 @@ export default function Hero() {
       </p>
 
       <h1 className={styles.heroTitle}>
-        Join 50,000+ 
-        <br />companies
-         driving <br />
-        <span className={styles.heroGradient}>exponential
-          <br /> growth</span>
+        Join 50,000+ companies driving <br />
+        <span className={styles.heroGradient}>exponential growth</span>
       </h1>
 
       <p className={styles.heroDesc}>

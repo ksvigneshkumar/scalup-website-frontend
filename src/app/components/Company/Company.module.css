@@ -1,49 +1,27 @@
-.section { padding: 100px 48px; }
+.section { padding:100px 48px; }
 .eyebrow { text-align:center; font-size:13px; letter-spacing:2.5px; color:#a855f7; margin-bottom:12px; font-weight:600; }
 .sectionTitle { text-align:center; font-size:42px; font-weight:800; margin:0 0 56px; max-width:760px; margin-left:auto; margin-right:auto; line-height:1.2; }
 
 .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-.grid3 > * {
-  opacity: 0;
-  transform: translateY(48px);
-  transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1),
-              transform 0.7s cubic-bezier(0.16,1,0.3,1);
-}
-.grid3.visible > * { opacity:1; transform:translateY(0); }
 
-.companyCard {
-  background: rgba(20,10,40,0.6);
-  border: 1px solid rgba(168,85,247,0.25);
-  border-radius: 20px;
-  padding: 34px;
-  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1),
-              border-color 0.3s ease,
-              box-shadow 0.4s ease;
+.grid3 > * { opacity:0; transform:translateY(70px); }
+.grid3.visible > *:nth-child(1) { animation: slideUp 0.9s 0.00s cubic-bezier(0.16,1,0.3,1) forwards; }
+.grid3.visible > *:nth-child(2) { animation: slideUp 0.9s 0.20s cubic-bezier(0.16,1,0.3,1) forwards; }
+.grid3.visible > *:nth-child(3) { animation: slideUp 0.9s 0.40s cubic-bezier(0.16,1,0.3,1) forwards; }
+
+@keyframes slideUp {
+  from { opacity:0; transform:translateY(70px); }
+  to   { opacity:1; transform:translateY(0); }
 }
-.companyCard:hover {
-  transform: translateY(-8px);
-  border-color: rgba(168,85,247,0.6);
-  box-shadow: 0 0 40px rgba(168,85,247,0.18);
-}
-.companyLabel {
-  font-size: 12px;
-  letter-spacing: 3px;
-  color: #fff;
-  font-weight: 800;
-  margin: 0 0 18px;
-  text-transform: uppercase;
-}
+
+.companyCard { background:rgba(20,10,40,0.6); border:1px solid rgba(168,85,247,0.25); border-radius:20px; padding:34px; transition:transform 0.4s cubic-bezier(0.16,1,0.3,1), border-color 0.3s, box-shadow 0.4s; }
+.companyCard:hover { transform:translateY(-10px) !important; border-color:rgba(168,85,247,0.65); box-shadow:0 0 48px rgba(168,85,247,0.2); }
+.companyLabel { font-size:12px; letter-spacing:3px; color:#fff; font-weight:800; margin:0 0 18px; text-transform:uppercase; }
 .companyDesc { color:#888; font-size:15px; line-height:1.75; margin:0; }
 .hr { border:none; border-top:1px solid rgba(255,255,255,0.08); margin:20px 0; }
 .checkList { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; }
 .checkList li { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:#999; line-height:1.5; }
 .checkMark { color:#a855f7; font-size:14px; margin-top:1px; flex-shrink:0; font-weight:700; }
 
-@media (max-width:1024px) { .grid3 { grid-template-columns:repeat(2,1fr); } }
-@media (max-width:768px) {
-  .section { padding:70px 20px; }
-  .sectionTitle { font-size:28px; margin-bottom:36px; }
-  .grid3 { grid-template-columns:1fr; }
-  .companyDesc { font-size:14px; }
-  .checkList li { font-size:13px; }
-}
+@media (max-width:1024px) { .grid3{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:768px) { .section{padding:70px 20px;} .sectionTitle{font-size:28px;margin-bottom:36px;} .grid3{grid-template-columns:1fr;} .companyDesc{font-size:14px;} .checkList li{font-size:13px;} }
