@@ -29,9 +29,9 @@
 .featCell { text-align:left !important; color:#ddd; font-size:14px; font-weight:500; }
 .compareTable tr:hover td { background: rgba(255,255,255,0.02); }
 .cellGreen  { color:#22c55e; font-size:20px; font-weight:700; }
-.cellRed    { color:rgba(255,255,255,0.18); font-size:20px; font-weight:700; }
+.cellRed    { color:rgba(214, 15, 15, 0.933); font-size:20px; font-weight:700; }
 .cellYellow { color:#f59e0b; font-size:13px; font-weight:600; }
-.cellMuted  { color:#888; font-size:14px; }
+.cellMuted  { color:#eadfdf; font-size:14px; }
 
 @media (max-width:768px) {
   .section { padding:70px 20px; }

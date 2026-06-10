@@ -26,7 +26,7 @@
   line-height: 1.6;
 }
 
-/* ───────────────── GRID ───────────────── */
+
 
 .grid3 {
   display: grid;
@@ -71,7 +71,7 @@
   transition-delay: 2s;
 }
 
-/* ───────────────── CARD ───────────────── */
+
 
 .featureCard {
   background: rgba(255, 255, 255, 0.03);
@@ -132,7 +132,7 @@
   background: rgba(255, 255, 255, 0.03);
 }
 
-/* ───────────────── RESPONSIVE ───────────────── */
+
 @media (max-width: 768px) {
   .section {
     padding: 70px 20px;

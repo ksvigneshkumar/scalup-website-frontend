@@ -16,7 +16,7 @@ export default function Pricing() {
           <div
             key={i}
             className={`${styles.priceCard} ${p.highlight ? styles.priceHighlight : ""}`}
-            style={{ transitionDelay: `${i * 100}ms` }}
+            style={{ transitionDelay: `${i * 80}ms` }}
           >
             {p.highlight && <div className={styles.popularBadge}>Most Popular</div>}
             <h3 className={styles.planName}>{p.name}</h3>

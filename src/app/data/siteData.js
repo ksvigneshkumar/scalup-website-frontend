@@ -1,7 +1,3 @@
-// ═══════════════════════════════════
-//  siteData.js — எல்லா content data
-//  ஒரே file-ல. மாத்தணும்னா இங்க மட்டும் மாத்தினா போதும்
-// ═══════════════════════════════════
 
 export const features = [
   {
@@ -148,8 +144,7 @@ export const pricingPlans = [
   },
 ];
 
-// val format: [feature, scalup, hubspot, mailchimp, instantly]
-// "y"=green ✓  "n"=red ✗  "p"=yellow Partial  "$xx"=price text
+
 export const comparisonFeatures = [
   ["AI-powered marketing automation", "y","p","y","n"],
   ["Cold outreach + lead database",   "y","n","n","y"],
@@ -158,7 +153,7 @@ export const comparisonFeatures = [
   ["Push notifications",              "y","n","n","n"],
   ["Native eCommerce support",        "y","p","p","n"],
   ["Review / testimonial management", "y","n","n","n"],
-  ["Starting price / month",          "$29","$20","$13","$37"],
+  ["Starting price / month",          "$29","$800","$20","$37"],
 ];
 
 export const footerLinks = {
